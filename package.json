@@ -4,6 +4,11 @@
   "homepage": "http://ionicframework.com/",
   "private": true,
   "scripts": {
+    "setup": "npm install ionic -g && npm install cordova -g && npm install",
+    "run_android_debug": "ionic platform add android && ionic run android",
+    "run_android_release": "ionic platform add android && ionic run android --prod --release",
+    "run_ios_debug": "ionic platform add ios && ionic run ios",
+    "run_ios_release": "ionic platform add ios && ionic run ios --prod --release",
     "clean": "ionic-app-scripts clean",
     "build": "ionic-app-scripts build",
     "ionic:build": "ionic-app-scripts build",
@@ -40,9 +45,7 @@
     "cordova-plugin-device",
     "cordova-plugin-splashscreen",
     "ionic-plugin-keyboard",
-
-    "cordova-plugin-network-information",
-
+    "cordova-plugin-network-information"
   ],
   "cordovaPlatforms": [],
   "description": "skeleton: An Ionic project"
