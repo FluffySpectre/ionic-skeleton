@@ -8,23 +8,19 @@ import { Network } from "@ionic-native/network";
 
 @Injectable()
 export class AppConfig {
+
     userProfile: UserProfile;
-    agbAccepted: boolean = false;
     isOnline: boolean = true;
 
     constructor(private storage: Storage, private platform: Platform, private network: Network) {
         this.checkNetwork();
-        var offline = Observable.fromEvent(document, "offline");
-        var online = Observable.fromEvent(document, "online");
-
-        offline.subscribe(() => {
-            //console.log("Offline");            
-            this.isOnline = false;
-        });
-
-        online.subscribe(()=>{
-            //console.log("Online");
+        // watch network for a connection
+        this.network.onConnect().subscribe(() => {
             this.isOnline = true;
+        });
+    
+        this.network.onDisconnect().subscribe(() => {
+            this.isOnline = false;
         });
     }
 
