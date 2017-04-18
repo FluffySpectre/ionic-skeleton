@@ -4,6 +4,9 @@
   "homepage": "http://www.benntec.de",
   "version": "0.0.1",
   "private": true,
+  "config": {
+    "ionic_webpack": "./src/config/webpack.config.js"
+  },
   "scripts": {
     "setup": "npm install ionic -g && npm install cordova -g && npm install",
     "android_debug": "ionic platform add android && ionic run android",

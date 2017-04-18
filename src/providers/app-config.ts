@@ -12,9 +12,9 @@ export class AppConfig {
     isOnline: boolean = true;
 
     constructor(private storage: Storage, private platform: Platform, private network: Network) {
-
         console.log(ENV.apiUrl);
         alert(ENV.apiUrl);
+
         this.checkNetwork();
         // watch network for a connection
         this.network.onConnect().subscribe(() => {
