@@ -10,7 +10,7 @@
     "run_android_release": "ionic platform add android && ionic run android --prod --release",
     "run_ios_debug": "ionic platform add ios && ionic run ios",
     "run_ios_release": "ionic platform add ios && ionic run ios --prod --release",
-    "clean": "ionic-app-scripts clean",
+    "clean": "ionic-app-scripts clean && ionic platform rm ios && ionic platform rm android",
     "build": "ionic-app-scripts build",
     "ionic:build": "ionic-app-scripts build",
     "ionic:serve": "ionic-app-scripts serve"
