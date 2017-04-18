@@ -1,7 +1,8 @@
 {
-  "name": "ionic-hello-world",
-  "author": "Ionic Framework",
-  "homepage": "http://ionicframework.com/",
+  "name": "skeleton",
+  "author": "benntec Systemtechnik GmbH",
+  "homepage": "http://www.benntec.de",
+  "version": "0.0.1",
   "private": true,
   "scripts": {
     "setup": "npm install ionic -g && npm install cordova -g && npm install",
