@@ -1,18 +1,20 @@
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/observable/fromEvent';
 import { Storage } from '@ionic/storage';
 import { UserProfile } from '../models/userprofile';
 import { Platform } from 'ionic-angular';
 import { Network } from "@ionic-native/network";
+import { ENV } from '@app/config';
 
 @Injectable()
 export class AppConfig {
-
     userProfile: UserProfile;
     isOnline: boolean = true;
 
     constructor(private storage: Storage, private platform: Platform, private network: Network) {
+
+        console.log(ENV.apiUrl);
+
         this.checkNetwork();
         // watch network for a connection
         this.network.onConnect().subscribe(() => {
