@@ -41,7 +41,7 @@
     "cordova-plugin-splashscreen",
     "ionic-plugin-keyboard",
 
-    "cordova-plugin-network-information",
+    "cordova-plugin-network-information"
 
   ],
   "cordovaPlatforms": [],
