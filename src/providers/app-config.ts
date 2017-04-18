@@ -4,7 +4,7 @@ import { Storage } from '@ionic/storage';
 import { UserProfile } from '../models/userprofile';
 import { Platform } from 'ionic-angular';
 import { Network } from "@ionic-native/network";
-import { ENV } from '@app/config';
+//import { ENV } from '@app/config'; // uncomment this, if environment variables are needed
 
 @Injectable()
 export class AppConfig {
@@ -12,9 +12,6 @@ export class AppConfig {
     isOnline: boolean = true;
 
     constructor(private storage: Storage, private platform: Platform, private network: Network) {
-        console.log(ENV.apiUrl);
-        alert(ENV.apiUrl);
-
         this.checkNetwork();
         // watch network for a connection
         this.network.onConnect().subscribe(() => {
