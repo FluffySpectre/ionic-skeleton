@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { Events } from 'ionic-angular';
 import 'rxjs/add/observable/fromEvent';
 import { Storage } from '@ionic/storage';
 import { UserProfile } from '../models/userprofile';
@@ -11,15 +12,23 @@ export class AppConfig {
     userProfile: UserProfile;
     isOnline: boolean = true;
 
-    constructor(private storage: Storage, private platform: Platform, private network: Network) {
+    constructor(private storage: Storage, private platform: Platform, private network: Network, private events: Events) {
         this.checkNetwork();
         // watch network for a connection
         this.network.onConnect().subscribe(() => {
             this.isOnline = true;
+            
+            console.log('OnConnect');
+
+            events.publish('onlineStatusChanged', true);
         });
     
         this.network.onDisconnect().subscribe(() => {
             this.isOnline = false;
+
+            console.log('OnDisconnect');
+
+            events.publish('onlineStatusChanged', false);
         });
     }
 
