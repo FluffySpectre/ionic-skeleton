@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { Events } from 'ionic-angular';
 
 @Component({
@@ -6,11 +6,11 @@ import { Events } from 'ionic-angular';
     templateUrl: 'offline.html'
 })
 export class OfflineComponent {
-    isOnline: boolean = true;
+    @ViewChild("offline") offline;
 
     constructor(private events: Events) {
         events.subscribe('onlineStatusChanged', (online) => {
-            this.isOnline = online;
+            this.offline.nativeElement.style.display = online ? "none" : "flex";
         });
     }
 }
