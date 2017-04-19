@@ -4,14 +4,13 @@ import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
 import { MyApp } from './app.component';
-import { HomePage } from '../pages/home/home';
+import { HomePage } from '../pages/home-page/home-page';
 
 import { SafePipe } from '../pipe/safe';
 import { OfflineComponent } from '../components/offline/offline';
 import { Network } from '@ionic-native/network';
 import { AppConfig } from '../providers/app-config';
 import { IonicStorageModule } from '@ionic/storage'
-
 
 @NgModule({
   declarations: [
