@@ -17,17 +17,11 @@ export class AppConfig {
         // watch network for a connection
         this.network.onConnect().subscribe(() => {
             this.isOnline = true;
-            
-            console.log('OnConnect');
-
             events.publish('onlineStatusChanged', true);
         });
     
         this.network.onDisconnect().subscribe(() => {
             this.isOnline = false;
-
-            console.log('OnDisconnect');
-
             events.publish('onlineStatusChanged', false);
         });
     }
